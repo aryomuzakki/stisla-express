@@ -1,0 +1,27 @@
+{
+  "name": "stisla-express",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "build:css": "node-sass src/resources/scss -o src/public/assets/css --source-map=true",
+    "watch:css": "npm run build:css && npm run build:css -- -w",
+    "watch:dev": "nodemon src/server.js",
+    "start": "npm run build:css && node src/server.js",
+    "dev": "npm run build:css && nodemon src/server.js",
+    "dev-css": "npm-run-all --parallel watch:css watch:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.2",
+    "npm-run-all": "^4.1.5"
+  }
+}
